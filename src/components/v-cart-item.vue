@@ -1,6 +1,8 @@
 <template>
   <div class="v-cart-item">
-    <img class="v-catalog-item-img-cart" :src="cart_item_data.imgURL" :alt="cart_item_data.image">
+     <img class="v-catalog-item-img-cart" :src="cart_item_data.imgURL" :alt="cart_item_data.image">
+    <div class="v-cart-item-components">
+     
     <div>
       <p> {{ cart_item_data.name }}</p>
       <p> {{ cart_item_data.price }}</p>
@@ -10,7 +12,9 @@
       <p>Quantity</p>
       <span>{{ cart_item_data.quantity }}</span>
     </div>
-    <button @click="deleteFromCart">Delete</button>
+    <button class="btn" @click="deleteFromCart">Удалить</button>
+    </div>
+    
   </div>
 </template>
 
@@ -27,7 +31,7 @@ export default {
     },
     data(){
         return {
-          title:"hello"
+          
         };
     },
     methods: {
@@ -57,11 +61,14 @@ export default {
     margin: 20px;
 }
 .v-catalog-item-img-cart {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   height: 80%;
   width: 80%;
+}
+.v-cart-item-components {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
 }
 
 </style>
